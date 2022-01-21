@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <script src="js/funciones.js"></script>
+  <script>
+    //alert(localStorage.variableUser);
+    //alert(localStorage.idusuario);
+    $(document).ready( function(){
+      $("#usuario").html(localStorage.variableUser);
+      $("#idcliente").val(localStorage.idusuario);
+      $("#detallespedidos").fadeOut();
+      $("#historialpedido").fadeOut();
+    });
+  </script>
+</head>
+
+<body>
+
+  <div data-role="page" id="pageone">
+    <div data-role="header">
+      <h1><button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-user" id="usuario"></button></h1>
+      <div data-role="navbar">
+        <ul>
+          <!--li><a href="#" onclick="mostrarmenu()">Inicio</a></li-->
+          <li title="inicio"><a href="#" class="" onclick="mostrarmenu()"><span class="fa fa-home" aria-hidden="true"></span><span id=""></span></a></li>
+          <li title="carrito"><a href="#" class="" onclick="mostrarpedidos()"><span class="fa fa-shopping-cart" aria-hidden="true"></span><span id="carrito"></span></a></li>
+          <li title="historial"><a href="#" class="" onclick="mostrarhistorial()"><span class="fa fa-history" aria-hidden="true"></span><span id=""></span></a></li>
+          <li title="salir"><a id="salir" href="#" class="ui-btn-icon-left ui-icon-power" onclick="salir()" >Salir</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--form id="formulario_pedidos" name="formulario_pedidos"-->
+    <div data-role="main" class="ui-content">
+      <div class="container">
+       
+          <input type="hidden" id="idcliente" name="idcliente" value="">
+        <div id="mostrarproductos"></div>
+
+        <div id="detallespedidos">
+          <!--div id="mensaje" style="color: red;"></div-->
+        </div>
+
+        <div id="historialpedido">
+          <!--div id="mensaje" style="color: red;"></div-->
+        </div>
+
+      </div> 
+      <div id="mensaje" style="color: red;"></div>
+    </div>
+  <!--/form-->
+</body>
+
+</html>
